@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FabricJS canvas</title>
+    <meta charset="UTF-8" />
+  </head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/94/three.min.js"></script>
+  <body>
+    <div id="app">
+      <!-- test achtergrond-->
+      <!-- <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Well done!</h4>
+        <p>
+          Aww yeah, you successfully read this important alert message. This
+          example text is going to run a bit longer so that you can see how
+          spacing within an alert works with this kind of content.
+        </p>
+        <hr />
+        <p class="mb-0">
+          Whenever you need to, be sure to use margin utilities to keep things
+          nice and tidy.
+        </p>
+      </div> -->
+
+      <div class="the-canvas">
+        <canvas id="canvas"></canvas>
+        <!-- width="500" height="350" -->
+        <div class="grid the-buttons">
+          <button id="draw">draw</button>
+          <button id="text">text block</button>
+          <button id="eraser">Erase</button>
+        </div>
+      </div>
+    </div>
+
+    <h1>Window Stats</h1>
+    <span>Width: <span class="width"></span></span>
+    <br />
+    <span>Height: <span class="height"></span></span>
+
+    <script src="src/index.js"></script>
+
+    <!-- <script>
+      function init() {
+        // const canvas2 = new fabric.Canvas(app.querySelector("canvas"), {
+        //   centeredScaling: true
+        // });
+
+        canvas = document.createElement("canvas");
+        ctx = canvas.getContext("2d");
+
+        renderer = new THREE.WebGLRenderer();
+        if (!renderer) {
+          return;
+        }
+        renderer.setSize(500, 350);
+
+        texture = new THREE.Texture(canvas);
+        camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+        scene = new THREE.Scene();
+
+        scene.add(
+          new THREE.Mesh(
+            new THREE.PlaneBufferGeometry(2, 2),
+            new THREE.MeshBasicMaterial({ map: texture })
+          )
+        );
+
+        document.body.appendChild(renderer.domElement);
+      }
+
+      function animate() {
+        // Always update your renderer size.
+        // This might be better off in the window.onresize event.
+        // renderer.setSize(500, 350);
+
+        // This will clear all draw data from your canvas, so we can draw on an empty canvas
+        canvas.width = 512;
+        canvas.height = 512;
+
+        ctx.save();
+        // Move the origin to the center of the canvas
+        ctx.translate(canvas.width / 2, canvas.height / 2);
+        // Scale the canvas like you did, except we know the size as we just set it.
+        ctx.scale(1, 500 / 350);
+        ctx.fillStyle = "#FF0000";
+        // Draw the rectangle as if you want its center at the origin
+        ctx.fillRect(-25, -25, 50, 50);
+        ctx.restore();
+
+        texture.needsUpdate = true;
+        requestAnimationFrame(animate);
+        renderer.render(scene, camera);
+      }
+
+      // I have removed some of the globals we don't need
+      // as the animate() function only needs access to some.
+      // I mostly do this because it clarifies what the functions share of resources.
+
+      var renderer, scene, camera, texture, canvas, ctx;
+
+      init();
+      animate();
+    </script> -->
+  </body>
+</html>
